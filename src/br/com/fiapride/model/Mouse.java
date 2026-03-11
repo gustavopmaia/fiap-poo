@@ -2,15 +2,15 @@ package br.com.fiapride.model;
 
 public class Mouse {
     private int dpi;
-    public double size;
-    public boolean isWired;
-    public boolean isConnected;
+    private double size;
+    private boolean isWired;
+    private boolean isConnected;
 
     public Mouse(int dpi, double size, boolean isWired, boolean isConnected) {
-        this.dpi = dpi;
+        this.setDpi(dpi);
         this.size = size;
-        this.isWired = isWired;
-        this.isConnected = isConnected;
+        this.setWired(isWired);
+        this.setConnected(isConnected);
     }
 
     public void click() {
@@ -37,7 +37,7 @@ public class Mouse {
             return;
         }
 
-        this.isConnected = true;
+        setConnected(true);
         System.out.println("Mouse conectado!");
     }
 
@@ -47,7 +47,40 @@ public class Mouse {
             return;
         }
 
-        this.dpi = newDpi;
+        setDpi(newDpi);
         System.out.println("Nova DPI do mouse: " + this.dpi);
+    }
+
+    public int getDpi() {
+        return dpi;
+    }
+
+    private void setDpi(int dpi) {
+        if(dpi <= 0) {
+            System.out.println("Erro: DPI não pode ser menor que zero.");
+            return;
+        }
+
+        this.dpi = dpi;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public boolean isWired() {
+        return isWired;
+    }
+
+    private void setWired(boolean wired) {
+        isWired = wired;
+    }
+
+    public boolean isConnected() {
+        return isConnected;
+    }
+
+    private void setConnected(boolean connected) {
+        isConnected = connected;
     }
 }

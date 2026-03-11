@@ -1,14 +1,14 @@
 package br.com.fiapride.model;
 
 public class Passageiro {
-    public String nome;
-    public String cpf;
-    public double saldo;
+    private String nome;
+    private String cpf;
+    private double saldo;
 
     public Passageiro(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.saldo = 0.0;
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setSaldo(0);
     }
 
     public void adicionarSaldo(double valor) {
@@ -32,5 +32,29 @@ public class Passageiro {
         }
         this.saldo -= custo;
         System.out.println("Viagem paga com sucesso. Saldo: " + this.saldo);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    private void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    private void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    private void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 }

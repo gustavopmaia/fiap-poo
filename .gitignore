@@ -5,3 +5,4 @@
 .metadata/
 bin/
 target/
+out
