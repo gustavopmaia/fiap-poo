@@ -8,7 +8,7 @@ public class Mouse {
 
     public Mouse(int dpi, double size, boolean isWired, boolean isConnected) {
         this.setDpi(dpi);
-        this.size = size;
+        this.setSize(size);
         this.setWired(isWired);
         this.setConnected(isConnected);
     }
@@ -51,6 +51,10 @@ public class Mouse {
         System.out.println("Nova DPI do mouse: " + this.dpi);
     }
 
+    private setSize(double size) {
+        this.size = size;
+    }
+    
     public int getDpi() {
         return dpi;
     }
